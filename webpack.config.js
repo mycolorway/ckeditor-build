@@ -37,7 +37,7 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
-    port: 9000,
+    port: 3000,
     hot: true
   },
   // https://webpack.js.org/configuration/entry-context/
