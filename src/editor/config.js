@@ -8,6 +8,7 @@ import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
 import Image from '@ckeditor/ckeditor5-image/src/image';
+import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
@@ -18,8 +19,16 @@ import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
 import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import PendingActions from '@ckeditor/ckeditor5-core/src/pendingactions';
+
 import Autolink from './plugins/autolink/autolink';
 import ClipboardFixer from './plugins/clipboard-fixer/clipboardFixer';
+import ImageViewer from './plugins/image-viewer/imageViewer';
+import InlineHighlight from './plugins/inline-highlight/inlineHighlight';
+import InlinePlaceholder from './plugins/inline-placeholder/inlinePlaceholder';
+import LinkConverter from './plugins/link-converter/linkConverter';
+import LinkOpener from './plugins/link-opener/linkOpener';
+import UploadAdapter from './plugins/upload-adapter/uploadAdapter';
+import WidgetFixer from './plugins/widget-fixer/widgetFixer';
 
 // TODO: 剪贴板 api 有更改
 // 详见：https://ckeditor.com/docs/ckeditor5/latest/updating/guides/update-to-27.html#clipboard-input-pipeline-integration
@@ -37,23 +46,23 @@ const commonPlugins = [
   ImageResize,
   ImageStyle,
   ImageToolbar,
-  // ImageUpload,
-  // ImageViewer,
-  // InlineHighlight,
-  // InlinePlaceholder,
+  ImageUpload,
+  ImageViewer,
+  InlineHighlight,
+  InlinePlaceholder,
   Italic,
   Link,
-  // LinkConverter,
-  // LinkOpener,
+  LinkConverter,
+  LinkOpener,
   List,
   // Mention,
   Paragraph,
   PasteFromOffice,
-  // UploadAdapter,
+  UploadAdapter,
   Strikethrough,
   TodoList,
   Underline,
-  // WidgetFixer,
+  WidgetFixer,
   PendingActions,
 ]
 
@@ -134,10 +143,15 @@ const config = {
       'todolist',
       'blockquote',
       'code',
+      'link',
     ]
   },
   highlight,
   image,
+  link: {
+    addTargetToExternalLinks: true,
+  },
+  disableImageView: false,
   language: 'zh-CN',
 }
 
