@@ -15,7 +15,7 @@ function Editor() {
 
   const editorRef = useRef();
 
-  const [data, setData] = useState('this is editor content');
+  const [data, setData] = useState('');
 
   const handleChange = useCallback((event, editor) => {
     const data = editor.getData();
@@ -24,6 +24,7 @@ function Editor() {
 
   const handleInit = useCallback((editor) => {
     editorRef.current = editor;
+    window.editor = editor;
     if (process.env.NODE_ENV === 'development') {
       CKEditorInspector.attach(editor);
     }

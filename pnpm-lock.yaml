@@ -9,9 +9,11 @@ specifiers:
   '@ckeditor/ckeditor5-autoformat': ^36.0.1
   '@ckeditor/ckeditor5-basic-styles': ^36.0.1
   '@ckeditor/ckeditor5-block-quote': ^36.0.1
+  '@ckeditor/ckeditor5-clipboard': ^36.0.1
   '@ckeditor/ckeditor5-core': ^36.0.1
   '@ckeditor/ckeditor5-dev-utils': ^34.1.1
   '@ckeditor/ckeditor5-editor-classic': ^36.0.1
+  '@ckeditor/ckeditor5-engine': ^36.0.1
   '@ckeditor/ckeditor5-essentials': ^36.0.1
   '@ckeditor/ckeditor5-highlight': ^36.0.1
   '@ckeditor/ckeditor5-image': ^36.0.1
@@ -24,6 +26,7 @@ specifiers:
   '@ckeditor/ckeditor5-theme-lark': ^36.0.1
   '@ckeditor/ckeditor5-typing': ^36.0.1
   '@ckeditor/ckeditor5-ui': ^36.0.1
+  '@ckeditor/ckeditor5-widget': ^36.0.1
   babel-loader: ^9.1.2
   core-js: '3'
   css-loader: '5'
@@ -48,9 +51,11 @@ dependencies:
   '@ckeditor/ckeditor5-autoformat': registry.npmmirror.com/@ckeditor/ckeditor5-autoformat/36.0.1
   '@ckeditor/ckeditor5-basic-styles': registry.npmmirror.com/@ckeditor/ckeditor5-basic-styles/36.0.1
   '@ckeditor/ckeditor5-block-quote': registry.npmmirror.com/@ckeditor/ckeditor5-block-quote/36.0.1
+  '@ckeditor/ckeditor5-clipboard': registry.npmmirror.com/@ckeditor/ckeditor5-clipboard/36.0.1
   '@ckeditor/ckeditor5-core': registry.npmmirror.com/@ckeditor/ckeditor5-core/36.0.1
   '@ckeditor/ckeditor5-dev-utils': registry.npmmirror.com/@ckeditor/ckeditor5-dev-utils/34.1.2_webpack@5.75.0
   '@ckeditor/ckeditor5-editor-classic': registry.npmmirror.com/@ckeditor/ckeditor5-editor-classic/36.0.1
+  '@ckeditor/ckeditor5-engine': registry.npmmirror.com/@ckeditor/ckeditor5-engine/36.0.1
   '@ckeditor/ckeditor5-essentials': registry.npmmirror.com/@ckeditor/ckeditor5-essentials/36.0.1
   '@ckeditor/ckeditor5-highlight': registry.npmmirror.com/@ckeditor/ckeditor5-highlight/36.0.1
   '@ckeditor/ckeditor5-image': registry.npmmirror.com/@ckeditor/ckeditor5-image/36.0.1
@@ -62,6 +67,7 @@ dependencies:
   '@ckeditor/ckeditor5-theme-lark': registry.npmmirror.com/@ckeditor/ckeditor5-theme-lark/36.0.1
   '@ckeditor/ckeditor5-typing': registry.npmmirror.com/@ckeditor/ckeditor5-typing/36.0.1
   '@ckeditor/ckeditor5-ui': registry.npmmirror.com/@ckeditor/ckeditor5-ui/36.0.1
+  '@ckeditor/ckeditor5-widget': registry.npmmirror.com/@ckeditor/ckeditor5-widget/36.0.1
   babel-loader: registry.npmmirror.com/babel-loader/9.1.2_qoaxtqicpzj5p3ubthw53xafqm
   core-js: registry.npmmirror.com/core-js/3.29.0
   css-loader: registry.npmmirror.com/css-loader/5.2.7_webpack@5.75.0

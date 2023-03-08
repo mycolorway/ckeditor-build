@@ -18,20 +18,19 @@ import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
 import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import PendingActions from '@ckeditor/ckeditor5-core/src/pendingactions';
-import TimeStamp from './plugins/timeStamp';
+import Autolink from './plugins/autolink/autolink';
+import ClipboardFixer from './plugins/clipboard-fixer/clipboardFixer';
 
 // TODO: 剪贴板 api 有更改
 // 详见：https://ckeditor.com/docs/ckeditor5/latest/updating/guides/update-to-27.html#clipboard-input-pipeline-integration
 
 const commonPlugins = [
-  TimeStamp,
-
   Autoformat,
-  // Autolink,
+  Autolink,
   Blockquote,
   Bold,
   Code,
-  // ClipboardFixer,
+  ClipboardFixer,
   Essentials,
   Highlight,
   Image,
@@ -135,7 +134,6 @@ const config = {
       'todolist',
       'blockquote',
       'code',
-      'timeStamp',
     ]
   },
   highlight,
