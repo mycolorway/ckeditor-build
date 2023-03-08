@@ -15,8 +15,7 @@ import ContextualBalloon from '@ckeditor/ckeditor5-ui/src/panel/balloon/contextu
 import TextWatcher from '@ckeditor/ckeditor5-typing/src/textwatcher';
 import DomWrapperView from '@ckeditor/ckeditor5-mention/src/ui/domwrapperview';
 import AutocompleteView from '@ckeditor/ckeditor5-mention/src/ui/mentionsview';
-import { debounce } from '@/modules/utils';
-import { CircularProgress } from '@/components/progress';
+import { debounce } from '../../utils';
 import View from '@ckeditor/ckeditor5-ui/src/view';
 import AutoCompleteListItemView from './autocompletelistitemview';
 import LabelViewWithIcon from './labelviewwithicon';
@@ -248,7 +247,8 @@ export default class AutocompleteUI extends Plugin {
         const icon = new View();
         icon.element = document.createElement('div');
         icon.element.classList.add('mention_loading');
-        ReactDOM.render(<CircularProgress size={14} thickness={2} color={'inherit'} />, icon.element);
+        const LoadingComponent = this.editor.config.get('loadingComponent')
+        ReactDOM.render(LoadingComponent, icon.element);
 
         this.renderLabel({
           listItemView,

@@ -25,10 +25,13 @@
     "@ckeditor/ckeditor5-editor-classic": "^36.0.1",
     "@ckeditor/ckeditor5-engine": "^36.0.1",
     "@ckeditor/ckeditor5-essentials": "^36.0.1",
+    "@ckeditor/ckeditor5-heading": "^36.0.1",
     "@ckeditor/ckeditor5-highlight": "^36.0.1",
     "@ckeditor/ckeditor5-image": "^36.0.1",
+    "@ckeditor/ckeditor5-indent": "^36.0.1",
     "@ckeditor/ckeditor5-link": "^36.0.1",
     "@ckeditor/ckeditor5-list": "^36.0.1",
+    "@ckeditor/ckeditor5-mention": "^36.0.1",
     "@ckeditor/ckeditor5-paragraph": "^36.0.1",
     "@ckeditor/ckeditor5-paste-from-office": "^36.0.1",
     "@ckeditor/ckeditor5-react": "^5.1.0",
@@ -36,6 +39,7 @@
     "@ckeditor/ckeditor5-typing": "^36.0.1",
     "@ckeditor/ckeditor5-ui": "^36.0.1",
     "@ckeditor/ckeditor5-upload": "^36.0.1",
+    "@ckeditor/ckeditor5-utils": "^36.0.1",
     "@ckeditor/ckeditor5-widget": "^36.0.1",
     "babel-loader": "^9.1.2",
     "core-js": "3",
@@ -43,8 +47,6 @@
     "html-webpack-plugin": "^5.5.0",
     "postcss-loader": "4",
     "raw-loader": "4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "sass": "^1.58.3",
     "sass-loader": "^13.2.0",
     "style-loader": "2",
@@ -54,11 +56,15 @@
   },
   "peerDependencies": {
     "@apollo/client": "^3.7.10",
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@apollo/client": "^3.7.10",
     "@ckeditor/ckeditor5-inspector": "^4.1.0",
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

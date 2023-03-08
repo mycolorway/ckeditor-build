@@ -2,9 +2,6 @@ import ReactDOM from 'react-dom';
 import { gql } from '@apollo/client';
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import AutocompleteUI from '../autocomplete/autocompleteui';
-import TaskItem from './components/task-item';
-import DocItem from './components/doc-item';
-import MemberItem from './components/member-item';
 
 const GET_MEMBERS = gql`
   query GetMembers {
@@ -104,42 +101,20 @@ query SearchCategory($keyword: String!, $category: String!, $offset: Int, $limit
 }
 `;
 
-function itemRenderer(item, processAvatarUrl) {
+function itemRenderer(item, renderMemberItem) {
   const itemElement = document.createElement('span');
   itemElement.classList.add('mention__item');
 
-  ReactDOM.render(<MemberItem
-    avatar={processAvatarUrl(item.avatar)}
-    name={item.name}
-  ></MemberItem>, itemElement);
+  ReactDOM.render(renderMemberItem(item), itemElement);
 
   return itemElement;
 }
 
-function taskRenderer(item) {
+function taskRenderer(item, renderTaskItem) {
   const itemElement = document.createElement('span');
   itemElement.classList.add('mention__item');
 
-  ReactDOM.render(<TaskItem
-    title={item.title}
-    completeStatus={item.completeStatus}
-    uniqueSearchId={item.uniqueSearchId}
-    assignee={item.assignee}
-    category={item.category}
-    dueDate={item.dueDate}
-  ></TaskItem>, itemElement);
-
-  return itemElement;
-}
-
-function docRenderer(item) {
-  const itemElement = document.createElement('span');
-  itemElement.classList.add('mention__item');
-
-  ReactDOM.render(<DocItem
-    name={item.name}
-    category={item.category}
-  />, itemElement);
+  ReactDOM.render(renderTaskItem(item), itemElement);
 
   return itemElement;
 }
@@ -155,6 +130,8 @@ export default class MentionUI extends Plugin {
 
   init() {
     this.apolloClient = this.editor.config.get('apolloClient');
+    this.renderTaskItem = this.editor.config.get('renderTaskItem');
+    this.renderMemberItem = this.editor.config.get('renderMemberItem');
     const { t } = this.editor.locale;
 
     const autocompleteUI = this.editor.plugins.get(AutocompleteUI);
@@ -169,7 +146,7 @@ export default class MentionUI extends Plugin {
           'member',
           {
             label: t('Members'),
-            renderer: itemRenderer,
+            renderer: (item) => itemRenderer(item, this.renderMemberItem),
             command: 'membersMention',
             fetchMore: this.getMoreFeedFetcher(),
           },
@@ -178,7 +155,7 @@ export default class MentionUI extends Plugin {
           'task',
           {
             label: t('Tasks'),
-            renderer: taskRenderer,
+            renderer: () => taskRenderer(item, this.renderTaskItem),
             command: 'tasksMention',
             fetchMore: this.getMoreFeedFetcher(),
           },

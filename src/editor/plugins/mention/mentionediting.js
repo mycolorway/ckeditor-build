@@ -36,7 +36,6 @@ export default class MentionEditing extends Plugin {
 
     this.editor.commands.add('membersMention', new MembersMentionCommand(this.editor));
     this.editor.commands.add('tasksMention', new LinksMentionCommand(this.editor, 'task'));
-    this.editor.commands.add('docsMention', new LinksMentionCommand(this.editor, 'lark_file'));
   }
 
   defineSchema() {

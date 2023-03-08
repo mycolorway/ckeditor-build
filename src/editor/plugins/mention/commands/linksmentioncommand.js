@@ -1,4 +1,3 @@
-import { urlParamsString } from '@/modules/utils';
 import AutocompleteCommand from '../../autocomplete/autocompletecommand';
 
 export default class LinksMentionCommand extends AutocompleteCommand {

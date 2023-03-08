@@ -4,20 +4,8 @@ import LinkUI from '@ckeditor/ckeditor5-link/src/linkui';
 import { isLinkElement } from '@ckeditor/ckeditor5-link/src/utils';
 import MouseEventsObserver from './mouseEventObserver';
 import OPEN_LINK_RULES from './rules';
+import { debounce } from '../../utils';
 
-function debounce(func, wait = 200, immediate) {
-  let timeout;
-  return (...args) => {
-    const later = () => {
-      timeout = null;
-      if (!immediate) func.apply(this, args);
-    };
-    const callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(this, args);
-  };
-}
 
 function findLinkElementAncestor(item) {
   if (!item) return null;

@@ -16,11 +16,14 @@ specifiers:
   '@ckeditor/ckeditor5-editor-classic': ^36.0.1
   '@ckeditor/ckeditor5-engine': ^36.0.1
   '@ckeditor/ckeditor5-essentials': ^36.0.1
+  '@ckeditor/ckeditor5-heading': ^36.0.1
   '@ckeditor/ckeditor5-highlight': ^36.0.1
   '@ckeditor/ckeditor5-image': ^36.0.1
+  '@ckeditor/ckeditor5-indent': ^36.0.1
   '@ckeditor/ckeditor5-inspector': ^4.1.0
   '@ckeditor/ckeditor5-link': ^36.0.1
   '@ckeditor/ckeditor5-list': ^36.0.1
+  '@ckeditor/ckeditor5-mention': ^36.0.1
   '@ckeditor/ckeditor5-paragraph': ^36.0.1
   '@ckeditor/ckeditor5-paste-from-office': ^36.0.1
   '@ckeditor/ckeditor5-react': ^5.1.0
@@ -28,6 +31,7 @@ specifiers:
   '@ckeditor/ckeditor5-typing': ^36.0.1
   '@ckeditor/ckeditor5-ui': ^36.0.1
   '@ckeditor/ckeditor5-upload': ^36.0.1
+  '@ckeditor/ckeditor5-utils': ^36.0.1
   '@ckeditor/ckeditor5-widget': ^36.0.1
   babel-loader: ^9.1.2
   core-js: '3'
@@ -56,14 +60,17 @@ dependencies:
   '@ckeditor/ckeditor5-block-quote': registry.npmmirror.com/@ckeditor/ckeditor5-block-quote/36.0.1
   '@ckeditor/ckeditor5-clipboard': registry.npmmirror.com/@ckeditor/ckeditor5-clipboard/36.0.1
   '@ckeditor/ckeditor5-core': registry.npmmirror.com/@ckeditor/ckeditor5-core/36.0.1
-  '@ckeditor/ckeditor5-dev-utils': registry.npmmirror.com/@ckeditor/ckeditor5-dev-utils/34.1.2_webpack@5.75.0
+  '@ckeditor/ckeditor5-dev-utils': registry.npmmirror.com/@ckeditor/ckeditor5-dev-utils/34.1.3_webpack@5.75.0
   '@ckeditor/ckeditor5-editor-classic': registry.npmmirror.com/@ckeditor/ckeditor5-editor-classic/36.0.1
   '@ckeditor/ckeditor5-engine': registry.npmmirror.com/@ckeditor/ckeditor5-engine/36.0.1
   '@ckeditor/ckeditor5-essentials': registry.npmmirror.com/@ckeditor/ckeditor5-essentials/36.0.1
+  '@ckeditor/ckeditor5-heading': registry.npmmirror.com/@ckeditor/ckeditor5-heading/36.0.1
   '@ckeditor/ckeditor5-highlight': registry.npmmirror.com/@ckeditor/ckeditor5-highlight/36.0.1
   '@ckeditor/ckeditor5-image': registry.npmmirror.com/@ckeditor/ckeditor5-image/36.0.1
+  '@ckeditor/ckeditor5-indent': registry.npmmirror.com/@ckeditor/ckeditor5-indent/36.0.1
   '@ckeditor/ckeditor5-link': registry.npmmirror.com/@ckeditor/ckeditor5-link/36.0.1
   '@ckeditor/ckeditor5-list': registry.npmmirror.com/@ckeditor/ckeditor5-list/36.0.1
+  '@ckeditor/ckeditor5-mention': registry.npmmirror.com/@ckeditor/ckeditor5-mention/36.0.1
   '@ckeditor/ckeditor5-paragraph': registry.npmmirror.com/@ckeditor/ckeditor5-paragraph/36.0.1
   '@ckeditor/ckeditor5-paste-from-office': registry.npmmirror.com/@ckeditor/ckeditor5-paste-from-office/36.0.1
   '@ckeditor/ckeditor5-react': registry.npmmirror.com/@ckeditor/ckeditor5-react/5.1.0_react@18.2.0
@@ -71,6 +78,7 @@ dependencies:
   '@ckeditor/ckeditor5-typing': registry.npmmirror.com/@ckeditor/ckeditor5-typing/36.0.1
   '@ckeditor/ckeditor5-ui': registry.npmmirror.com/@ckeditor/ckeditor5-ui/36.0.1
   '@ckeditor/ckeditor5-upload': registry.npmmirror.com/@ckeditor/ckeditor5-upload/36.0.1
+  '@ckeditor/ckeditor5-utils': registry.npmmirror.com/@ckeditor/ckeditor5-utils/36.0.1
   '@ckeditor/ckeditor5-widget': registry.npmmirror.com/@ckeditor/ckeditor5-widget/36.0.1
   babel-loader: registry.npmmirror.com/babel-loader/9.1.2_qoaxtqicpzj5p3ubthw53xafqm
   core-js: registry.npmmirror.com/core-js/3.29.0
@@ -78,8 +86,6 @@ dependencies:
   html-webpack-plugin: registry.npmmirror.com/html-webpack-plugin/5.5.0_webpack@5.75.0
   postcss-loader: registry.npmmirror.com/postcss-loader/4.3.0_webpack@5.75.0
   raw-loader: registry.npmmirror.com/raw-loader/4.0.2_webpack@5.75.0
-  react: registry.npmmirror.com/react/18.2.0
-  react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
   sass: registry.npmmirror.com/sass/1.58.3
   sass-loader: registry.npmmirror.com/sass-loader/13.2.0_sass@1.58.3+webpack@5.75.0
   style-loader: registry.npmmirror.com/style-loader/2.0.0_webpack@5.75.0
@@ -91,6 +97,8 @@ devDependencies:
   '@apollo/client': registry.npmmirror.com/@apollo/client/3.7.10_gdcq4dv6opitr3wbfwyjmanyra
   '@ckeditor/ckeditor5-inspector': registry.npmmirror.com/@ckeditor/ckeditor5-inspector/4.1.0
   graphql: registry.npmmirror.com/graphql/16.6.0
+  react: registry.npmmirror.com/react/18.2.0
+  react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
 
 packages:
 
@@ -1732,10 +1740,10 @@ packages:
       lodash-es: registry.npmmirror.com/lodash-es/4.17.21
     dev: false
 
-  registry.npmmirror.com/@ckeditor/ckeditor5-dev-translations/34.1.2:
-    resolution: {integrity: sha512-rYG3OTtBrHPHYOpH+A+PPIYHQgriCj9qS68VZI9ucGffrE1YgKvWFEKEgBXuwOTMABjSVnTnMfIp85jE9dm0Bg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-dev-translations/-/ckeditor5-dev-translations-34.1.2.tgz}
+  registry.npmmirror.com/@ckeditor/ckeditor5-dev-translations/34.1.3:
+    resolution: {integrity: sha512-opSNrbvFAsKYBuRXQk7HQD21x6SquIOly3g2eNDKKd4tkC+mSwaYOwLeRS9lnf07Wst/wF+ANZD8+QUGHrOBQA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-dev-translations/-/ckeditor5-dev-translations-34.1.3.tgz}
     name: '@ckeditor/ckeditor5-dev-translations'
-    version: 34.1.2
+    version: 34.1.3
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
       '@babel/parser': registry.npmmirror.com/@babel/parser/7.21.2
@@ -1748,14 +1756,14 @@ packages:
       - supports-color
     dev: false
 
-  registry.npmmirror.com/@ckeditor/ckeditor5-dev-utils/34.1.2_webpack@5.75.0:
-    resolution: {integrity: sha512-74jp5T9LRN1k83esT8qBBU2Ea4tKlTwZWUY/5ywjpf+n2AkqKAEw1KO45LhblqtfOhJc33HGBSwg0K3kw00t3w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-dev-utils/-/ckeditor5-dev-utils-34.1.2.tgz}
-    id: registry.npmmirror.com/@ckeditor/ckeditor5-dev-utils/34.1.2
+  registry.npmmirror.com/@ckeditor/ckeditor5-dev-utils/34.1.3_webpack@5.75.0:
+    resolution: {integrity: sha512-V/0FCwrjVUzPAQKavCWG/Gk3ScSSBAV3WZ3bo0OTNxVqlx1nDoaxX2WNXPCE3sPvl/4SY+dV/T98bsz2BJ4z/Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-dev-utils/-/ckeditor5-dev-utils-34.1.3.tgz}
+    id: registry.npmmirror.com/@ckeditor/ckeditor5-dev-utils/34.1.3
     name: '@ckeditor/ckeditor5-dev-utils'
-    version: 34.1.2
+    version: 34.1.3
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-dev-translations': registry.npmmirror.com/@ckeditor/ckeditor5-dev-translations/34.1.2
+      '@ckeditor/ckeditor5-dev-translations': registry.npmmirror.com/@ckeditor/ckeditor5-dev-translations/34.1.3
       chalk: registry.npmmirror.com/chalk/3.0.0
       cli-cursor: registry.npmmirror.com/cli-cursor/3.1.0
       cli-spinners: registry.npmmirror.com/cli-spinners/2.7.0
@@ -1821,6 +1829,15 @@ packages:
       ckeditor5: registry.npmmirror.com/ckeditor5/36.0.1
     dev: false
 
+  registry.npmmirror.com/@ckeditor/ckeditor5-heading/36.0.1:
+    resolution: {integrity: sha512-elVL6y8kFFB4wCjmVTYsbx5vFoNCsPn9fAJ4/T2tElb9wszs4BsbMjScUNwVomOxuSPy3x6Qt4HG1NFVoh1FKg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-heading/-/ckeditor5-heading-36.0.1.tgz}
+    name: '@ckeditor/ckeditor5-heading'
+    version: 36.0.1
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5/36.0.1
+    dev: false
+
   registry.npmmirror.com/@ckeditor/ckeditor5-highlight/36.0.1:
     resolution: {integrity: sha512-ETMR6RHd7W0sBm9AECx0OXR16XPBehUJd11yEiiubt9+sjV5GuHKYoFAyU3Vv8fsAoWAEnKNroRxm7Xvga8jZw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-highlight/-/ckeditor5-highlight-36.0.1.tgz}
     name: '@ckeditor/ckeditor5-highlight'
@@ -1839,6 +1856,15 @@ packages:
       '@ckeditor/ckeditor5-ui': registry.npmmirror.com/@ckeditor/ckeditor5-ui/36.0.1
       ckeditor5: registry.npmmirror.com/ckeditor5/36.0.1
       lodash-es: registry.npmmirror.com/lodash-es/4.17.21
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-indent/36.0.1:
+    resolution: {integrity: sha512-3E+3UCP9Krr41yP8g5a/QmJEJCChOFWdrLShi0YYODkJlhI/UUJFWVDTx54x1GnnDhXt8HhpOVGHCo14+KuRfA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-indent/-/ckeditor5-indent-36.0.1.tgz}
+    name: '@ckeditor/ckeditor5-indent'
+    version: 36.0.1
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5/36.0.1
     dev: false
 
   registry.npmmirror.com/@ckeditor/ckeditor5-inspector/4.1.0:
@@ -1867,6 +1893,16 @@ packages:
     dependencies:
       '@ckeditor/ckeditor5-ui': registry.npmmirror.com/@ckeditor/ckeditor5-ui/36.0.1
       ckeditor5: registry.npmmirror.com/ckeditor5/36.0.1
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-mention/36.0.1:
+    resolution: {integrity: sha512-XH72PDR25s0QGZeYksiNe4zRwH2us0okQswUgxWUJw9l0JStG6N29F22cw/Op0LezVN6ZyJRe4sGdMf9gkz/7A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-mention/-/ckeditor5-mention-36.0.1.tgz}
+    name: '@ckeditor/ckeditor5-mention'
+    version: 36.0.1
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5/36.0.1
+      lodash-es: registry.npmmirror.com/lodash-es/4.17.21
     dev: false
 
   registry.npmmirror.com/@ckeditor/ckeditor5-paragraph/36.0.1:
@@ -2155,7 +2191,7 @@ packages:
     version: 1.19.2
     dependencies:
       '@types/connect': registry.npmmirror.com/@types/connect/3.4.35
-      '@types/node': registry.npmmirror.com/@types/node/18.14.2
+      '@types/node': registry.npmmirror.com/@types/node/18.14.6
     dev: false
 
   registry.npmmirror.com/@types/bonjour/3.5.10:
@@ -2163,7 +2199,7 @@ packages:
     name: '@types/bonjour'
     version: 3.5.10
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node/18.14.2
+      '@types/node': registry.npmmirror.com/@types/node/18.14.6
     dev: false
 
   registry.npmmirror.com/@types/connect-history-api-fallback/1.3.5:
@@ -2172,7 +2208,7 @@ packages:
     version: 1.3.5
     dependencies:
       '@types/express-serve-static-core': registry.npmmirror.com/@types/express-serve-static-core/4.17.33
-      '@types/node': registry.npmmirror.com/@types/node/18.14.2
+      '@types/node': registry.npmmirror.com/@types/node/18.14.6
     dev: false
 
   registry.npmmirror.com/@types/connect/3.4.35:
@@ -2180,7 +2216,7 @@ packages:
     name: '@types/connect'
     version: 3.4.35
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node/18.14.2
+      '@types/node': registry.npmmirror.com/@types/node/18.14.6
     dev: false
 
   registry.npmmirror.com/@types/eslint-scope/3.7.4:
@@ -2212,7 +2248,7 @@ packages:
     name: '@types/express-serve-static-core'
     version: 4.17.33
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node/18.14.2
+      '@types/node': registry.npmmirror.com/@types/node/18.14.6
       '@types/qs': registry.npmmirror.com/@types/qs/6.9.7
       '@types/range-parser': registry.npmmirror.com/@types/range-parser/1.2.4
     dev: false
@@ -2234,7 +2270,7 @@ packages:
     version: 7.2.0
     dependencies:
       '@types/minimatch': registry.npmmirror.com/@types/minimatch/5.1.2
-      '@types/node': registry.npmmirror.com/@types/node/18.14.2
+      '@types/node': registry.npmmirror.com/@types/node/18.14.6
     dev: false
 
   registry.npmmirror.com/@types/html-minifier-terser/6.1.0:
@@ -2248,7 +2284,7 @@ packages:
     name: '@types/http-proxy'
     version: 1.17.10
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node/18.14.2
+      '@types/node': registry.npmmirror.com/@types/node/18.14.6
     dev: false
 
   registry.npmmirror.com/@types/json-schema/7.0.11:
@@ -2269,10 +2305,10 @@ packages:
     version: 5.1.2
     dev: false
 
-  registry.npmmirror.com/@types/node/18.14.2:
-    resolution: {integrity: sha512-1uEQxww3DaghA0RxqHx0O0ppVlo43pJhepY51OxuQIKHpjbnYLA7vcdwioNPzIqmC2u3I/dmylcqjlh0e7AyUA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-18.14.2.tgz}
+  registry.npmmirror.com/@types/node/18.14.6:
+    resolution: {integrity: sha512-93+VvleD3mXwlLI/xASjw0FzKcwzl3OdTCzm1LaRfqgS21gfFtK3zDXM5Op9TeeMsJVOaJ2VRDpT9q4Y3d0AvA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-18.14.6.tgz}
     name: '@types/node'
-    version: 18.14.2
+    version: 18.14.6
     dev: false
 
   registry.npmmirror.com/@types/parse-json/4.0.0:
@@ -2313,7 +2349,7 @@ packages:
     version: 1.15.1
     dependencies:
       '@types/mime': registry.npmmirror.com/@types/mime/3.0.1
-      '@types/node': registry.npmmirror.com/@types/node/18.14.2
+      '@types/node': registry.npmmirror.com/@types/node/18.14.6
     dev: false
 
   registry.npmmirror.com/@types/sockjs/0.3.33:
@@ -2321,7 +2357,7 @@ packages:
     name: '@types/sockjs'
     version: 0.3.33
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node/18.14.2
+      '@types/node': registry.npmmirror.com/@types/node/18.14.6
     dev: false
 
   registry.npmmirror.com/@types/ws/8.5.4:
@@ -2329,7 +2365,7 @@ packages:
     name: '@types/ws'
     version: 8.5.4
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node/18.14.2
+      '@types/node': registry.npmmirror.com/@types/node/18.14.6
     dev: false
 
   registry.npmmirror.com/@webassemblyjs/ast/1.11.1:
@@ -2855,8 +2891,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: registry.npmmirror.com/caniuse-lite/1.0.30001458
-      electron-to-chromium: registry.npmmirror.com/electron-to-chromium/1.4.314
+      caniuse-lite: registry.npmmirror.com/caniuse-lite/1.0.30001462
+      electron-to-chromium: registry.npmmirror.com/electron-to-chromium/1.4.324
       node-releases: registry.npmmirror.com/node-releases/2.0.10
       update-browserslist-db: registry.npmmirror.com/update-browserslist-db/1.0.10_browserslist@4.21.5
     dev: false
@@ -2947,15 +2983,15 @@ packages:
     version: 3.0.0
     dependencies:
       browserslist: registry.npmmirror.com/browserslist/4.21.5
-      caniuse-lite: registry.npmmirror.com/caniuse-lite/1.0.30001458
+      caniuse-lite: registry.npmmirror.com/caniuse-lite/1.0.30001462
       lodash.memoize: registry.npmmirror.com/lodash.memoize/4.1.2
       lodash.uniq: registry.npmmirror.com/lodash.uniq/4.5.0
     dev: false
 
-  registry.npmmirror.com/caniuse-lite/1.0.30001458:
-    resolution: {integrity: sha512-lQ1VlUUq5q9ro9X+5gOEyH7i3vm+AYVT1WDCVB69XOZ17KZRhnZ9J0Sqz7wTHQaLBJccNCHq8/Ww5LlOIZbB0w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001458.tgz}
+  registry.npmmirror.com/caniuse-lite/1.0.30001462:
+    resolution: {integrity: sha512-PDd20WuOBPiasZ7KbFnmQRyuLE7cFXW2PVd7dmALzbkUXEP46upAuCDm9eY9vho8fgNMGmbAX92QBZHzcnWIqw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001462.tgz}
     name: caniuse-lite
-    version: 1.0.30001458
+    version: 1.0.30001462
     dev: false
 
   registry.npmmirror.com/chalk/2.4.2:
@@ -3403,7 +3439,7 @@ packages:
       postcss: ^8.2.15
     dependencies:
       cssnano-preset-default: registry.npmmirror.com/cssnano-preset-default/5.2.14_postcss@8.4.21
-      lilconfig: registry.npmmirror.com/lilconfig/2.0.6
+      lilconfig: registry.npmmirror.com/lilconfig/2.1.0
       postcss: registry.npmmirror.com/postcss/8.4.21
       yaml: registry.npmmirror.com/yaml/1.10.2
     dev: false
@@ -3585,10 +3621,10 @@ packages:
     version: 1.1.1
     dev: false
 
-  registry.npmmirror.com/electron-to-chromium/1.4.314:
-    resolution: {integrity: sha512-+3RmNVx9hZLlc0gW//4yep0K5SYKmIvB5DXg1Yg6varsuAHlHwTeqeygfS8DWwLCsNOWrgj+p9qgM5WYjw1lXQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.314.tgz}
+  registry.npmmirror.com/electron-to-chromium/1.4.324:
+    resolution: {integrity: sha512-m+eBs/kh3TXnCuqDF6aHLLRwLK2U471JAbZ1KYigf0TM96fZglxv0/ZFBvyIxnLKsIWUoDiVnHTA2mhYz1fqdA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.324.tgz}
     name: electron-to-chromium
-    version: 1.4.314
+    version: 1.4.324
     dev: false
 
   registry.npmmirror.com/emojis-list/3.0.0:
@@ -4505,7 +4541,7 @@ packages:
     version: 26.6.2
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node/18.14.2
+      '@types/node': registry.npmmirror.com/@types/node/18.14.6
       merge-stream: registry.npmmirror.com/merge-stream/2.0.0
       supports-color: registry.npmmirror.com/supports-color/7.2.0
     dev: false
@@ -4516,7 +4552,7 @@ packages:
     version: 27.5.1
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node/18.14.2
+      '@types/node': registry.npmmirror.com/@types/node/18.14.6
       merge-stream: registry.npmmirror.com/merge-stream/2.0.0
       supports-color: registry.npmmirror.com/supports-color/8.1.1
     dev: false
@@ -4589,10 +4625,10 @@ packages:
     engines: {node: '>= 8'}
     dev: false
 
-  registry.npmmirror.com/lilconfig/2.0.6:
-    resolution: {integrity: sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lilconfig/-/lilconfig-2.0.6.tgz}
+  registry.npmmirror.com/lilconfig/2.1.0:
+    resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lilconfig/-/lilconfig-2.1.0.tgz}
     name: lilconfig
-    version: 2.0.6
+    version: 2.1.0
     engines: {node: '>=10'}
     dev: false
 
@@ -5890,6 +5926,7 @@ packages:
       loose-envify: registry.npmmirror.com/loose-envify/1.4.0
       react: registry.npmmirror.com/react/18.2.0
       scheduler: registry.npmmirror.com/scheduler/0.23.0
+    dev: true
 
   registry.npmmirror.com/react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-is/-/react-is-16.13.1.tgz}
@@ -6194,6 +6231,7 @@ packages:
     version: 0.23.0
     dependencies:
       loose-envify: registry.npmmirror.com/loose-envify/1.4.0
+    dev: true
 
   registry.npmmirror.com/schema-utils/3.1.1:
     resolution: {integrity: sha512-Y5PQxS4ITlC+EahLuXaY86TXfR7Dc5lw294alXOq86JAHCihAIZfqv8nNCWvaEJvaC51uN9hbLGeV0cFBdH+Fw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/schema-utils/-/schema-utils-3.1.1.tgz}
