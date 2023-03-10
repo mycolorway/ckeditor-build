@@ -8,7 +8,8 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import CKEditorInspector from '@ckeditor/ckeditor5-inspector';
 
 import './theme/editor.scss';
-import './translations/zh-CN'
+import './translations/zh-CN';
+import './translations/en-US';
 
 import configs from './config';
 import { noop } from './utils';

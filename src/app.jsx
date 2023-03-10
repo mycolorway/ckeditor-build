@@ -56,7 +56,7 @@ export default function App() {
       <Editor
         apolloClient={apolloClient}
         renderReactComponents={renderReactComponents}
-        language="zh-CN"
+        language="en-US"
       />
     </>
   );
