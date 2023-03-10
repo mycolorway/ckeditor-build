@@ -5,7 +5,7 @@ import Editor from './editor/editor';
 
 export default function App() {
 
-  const renderReactComponents = {
+  const customFunctions = {
     renderTaskItem: (item, domElement) => {
       render(<div> task </div>, domElement)
     },
@@ -55,7 +55,7 @@ export default function App() {
     <>
       <Editor
         apolloClient={apolloClient}
-        renderReactComponents={renderReactComponents}
+        customFunctions={customFunctions}
         language="en-US"
       />
     </>

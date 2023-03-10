@@ -3,8 +3,6 @@ body {
   --ck-color-base-background: #fff;
   --ck-color-base-text: transparent;
 
-  --ck-highlight-marker-aa: rgba(0, 0, 0, 1);
-
   --ck-color-button-action-active-shadow: transparent;
   --ck-color-button-default-active-background: #22222214;
   --ck-color-button-default-active-shadow: transparent;
@@ -122,6 +120,7 @@ body {
 
 .ck .ck.ck-toolbar.ck-toolbar_vertical {
   height: auto;
+  padding: 0;
 }
 
 .ck .ck.ck-toolbar>.ck-toolbar__items>* {
@@ -168,6 +167,20 @@ body {
 .ck .ck.ck-button.ck-dropdown__button.ck-button_with-text {
   padding: var(--ck-spacing-tiny);
   padding-left: var(--ck-spacing-small);
+}
+
+.ck.ck-list__item .ck-button {
+  min-height: unset;
+  width: 100%;
+  padding: calc(0.2*var(--ck-line-height-base)*var(--ck-font-size-base)) calc(0.4*var(--ck-line-height-base)*var(--ck-font-size-base));
+  box-shadow: none;
+  
+  &.ck-on {
+    color: var(--primary);
+  }
+}
+.ck.ck-toolbar__items .ck-button {
+  box-shadow: none;
 }
 
 .ck .ck.ck-dropdown__panel {

@@ -128,7 +128,7 @@ export default class MentionUI extends Plugin {
 
   init() {
     this.apolloClient = this.editor.config.get('apolloClient');
-    const customRenders = this.editor.config.get('renderReactComponents')
+    const customRenders = this.editor.config.get('customFunctions')
     this.renderTaskItem = customRenders.renderTaskItem;
     this.renderMemberItem = customRenders.renderMemberItem;
     const { t } = this.editor.locale;

@@ -24,7 +24,7 @@ export default class LinkOpener extends Plugin {
 
   init() {
     this.linkUI = this.editor.plugins.get(LinkUI);
-    this.openTask = this.editor.config.get('openTask');
+    this.openTask = this.editor.config.get('customFunctions').openTask;
     this.editor.editing.view.addObserver(MouseEventsObserver);
     this.defineListener();
   }
@@ -73,7 +73,7 @@ export default class LinkOpener extends Plugin {
         const href = parentLink.getAttribute('href');
         if (
           linkUI._isUIVisible
-          && linkUI.formView.urlInputView.fieldView.value === href
+          && linkUI?.formView?.urlInputView?.fieldView?.value === href
         ) {
           return;
         }
@@ -99,7 +99,6 @@ export default class LinkOpener extends Plugin {
 
   openLink(link) {
     const { editor, linkUI } = this;
-
     const opened = OPEN_LINK_RULES.some((rule) => {
       const matches = link.match(rule.regex);
       if (!matches) return false;
