@@ -1,0 +1,63 @@
+.wrapper {
+  display: flex;
+};
+.left {
+  width: 20px!important;
+  line-height: 20px!important;
+  margin-right: var(--space)!important;
+  color: #FFFFFF !important;
+  flex-shrink: 0;
+};
+.iconWrap {
+  margin-top: 3px !important;
+  width: 16px !important;
+  height: 16px !important;
+
+  .statusIcon {
+    vertical-align: top !important;
+    font-size: 8px !important;
+
+    path {
+      color: inherit;
+    }
+  }
+  .milestoneIcon {
+    font-size: 16px !important;
+  }
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+};
+.title {
+  display: -webkit-box !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  white-space: normal!important;
+  font-size: 14px !important;
+  line-height: 22px !important;
+  color: var(--gray-120) !important;
+};
+.info {
+  display: flex;
+  align-items: center;
+  font-size: 12px !important;
+  line-height: 20px !important;
+  & * {
+    color: var(--gray-80) !important;
+  };
+};
+.span {
+  float: left!important;
+  font-size: 12px!important;
+  line-height: 16px!important;
+};
+.line {
+  height: 8px !important;
+  width: 1px !important;
+  margin: 0px 8px !important;
+  background-color: #D0D7D8 !important;
+};

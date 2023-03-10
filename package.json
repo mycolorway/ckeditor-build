@@ -1,0 +1,81 @@
+{
+  "name": "ckeditor-build-task",
+  "version": "1.0.0",
+  "description": "ONES Task 编辑器",
+  "main": "./build/ckeditor.js",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "keywords": [],
+  "author": "SnowChasm",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "license": "GPL-2.0-or-later",
+  "dependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/plugin-transform-runtime": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@ckeditor/ckeditor5-alignment": "^36.0.1",
+    "@ckeditor/ckeditor5-autoformat": "^36.0.1",
+    "@ckeditor/ckeditor5-basic-styles": "^36.0.1",
+    "@ckeditor/ckeditor5-block-quote": "^36.0.1",
+    "@ckeditor/ckeditor5-clipboard": "^36.0.1",
+    "@ckeditor/ckeditor5-core": "^36.0.1",
+    "@ckeditor/ckeditor5-dev-utils": "^34.1.1",
+    "@ckeditor/ckeditor5-editor-balloon": "^36.0.1",
+    "@ckeditor/ckeditor5-editor-classic": "^36.0.1",
+    "@ckeditor/ckeditor5-editor-inline": "^36.0.1",
+    "@ckeditor/ckeditor5-engine": "^36.0.1",
+    "@ckeditor/ckeditor5-essentials": "^36.0.1",
+    "@ckeditor/ckeditor5-heading": "^36.0.1",
+    "@ckeditor/ckeditor5-highlight": "^36.0.1",
+    "@ckeditor/ckeditor5-image": "^36.0.1",
+    "@ckeditor/ckeditor5-indent": "^36.0.1",
+    "@ckeditor/ckeditor5-link": "^36.0.1",
+    "@ckeditor/ckeditor5-list": "^36.0.1",
+    "@ckeditor/ckeditor5-mention": "^36.0.1",
+    "@ckeditor/ckeditor5-paragraph": "^36.0.1",
+    "@ckeditor/ckeditor5-paste-from-office": "^36.0.1",
+    "@ckeditor/ckeditor5-react": "^5.1.0",
+    "@ckeditor/ckeditor5-theme-lark": "^36.0.1",
+    "@ckeditor/ckeditor5-typing": "^36.0.1",
+    "@ckeditor/ckeditor5-ui": "^36.0.1",
+    "@ckeditor/ckeditor5-upload": "^36.0.1",
+    "@ckeditor/ckeditor5-utils": "^36.0.1",
+    "@ckeditor/ckeditor5-widget": "^36.0.1",
+    "babel-loader": "^9.1.2",
+    "core-js": "3",
+    "css-loader": "5",
+    "html-webpack-plugin": "^5.5.0",
+    "postcss-loader": "4",
+    "raw-loader": "4",
+    "sass": "^1.58.3",
+    "sass-loader": "^13.2.0",
+    "style-loader": "2",
+    "webpack": "5",
+    "webpack-cli": "4",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "peerDependencies": {
+    "@apollo/client": "^3.7.10",
+    "graphql": "^16.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.7.10",
+    "@ckeditor/ckeditor5-inspector": "^4.1.0",
+    "graphql": "^16.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "webpack-merge": "^5.8.0"
+  }
+}
