@@ -20,6 +20,8 @@ import View from '@ckeditor/ckeditor5-ui/src/view';
 import AutoCompleteListItemView from './autocompletelistitemview';
 import LabelViewWithIcon from './labelviewwithicon';
 
+import './theme/autocompleteui.scss';
+
 const VERTICAL_SPACING = 3;
 
 export function createRegExp(marker, minimumCharacters) {
