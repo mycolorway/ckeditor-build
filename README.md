@@ -2,7 +2,7 @@
 ckeditor 编辑器 - 自定义构建
 
 # Install
-`pnpm add @mycolorway/ckeditor-build-task`
+`pnpm add ckeditor5-build-task`
 
 # Hot to use
 ```javascript
