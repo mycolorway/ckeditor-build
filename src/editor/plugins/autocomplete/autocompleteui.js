@@ -247,7 +247,7 @@ export default class AutocompleteUI extends Plugin {
         const icon = new View();
         icon.element = document.createElement('div');
         icon.element.classList.add('mention_loading');
-        const renderLoading = this.editor.config.get('renderReactComponent').renderLoading;
+        const renderLoading = this.editor.config.get('renderReactComponents').renderLoading;
         renderLoading(icon.element);
 
         this.renderLabel({
