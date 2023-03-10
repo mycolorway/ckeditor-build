@@ -105,8 +105,7 @@ function itemRenderer(item, renderMemberItem) {
   const itemElement = document.createElement('span');
   itemElement.classList.add('mention__item');
 
-  ReactDOM.render(renderMemberItem(item), itemElement);
-
+  renderMemberItem(item, itemElement)
   return itemElement;
 }
 
@@ -114,8 +113,7 @@ function taskRenderer(item, renderTaskItem) {
   const itemElement = document.createElement('span');
   itemElement.classList.add('mention__item');
 
-  ReactDOM.render(renderTaskItem(item), itemElement);
-
+  renderTaskItem(item, itemElement)
   return itemElement;
 }
 
@@ -130,11 +128,13 @@ export default class MentionUI extends Plugin {
 
   init() {
     this.apolloClient = this.editor.config.get('apolloClient');
-    this.renderTaskItem = this.editor.config.get('renderTaskItem');
-    this.renderMemberItem = this.editor.config.get('renderMemberItem');
+    const customRenders = this.editor.config.get('renderReactComponents')
+    this.renderTaskItem = customRenders.renderTaskItem;
+    this.renderMemberItem = customRenders.renderMemberItem;
     const { t } = this.editor.locale;
 
     const autocompleteUI = this.editor.plugins.get(AutocompleteUI);
+
     autocompleteUI.addConfig({
       marker: '@',
       placeholder: t('Mention resources'),
@@ -155,7 +155,7 @@ export default class MentionUI extends Plugin {
           'task',
           {
             label: t('Tasks'),
-            renderer: () => taskRenderer(item, this.renderTaskItem),
+            renderer: (item) => taskRenderer(item, this.renderTaskItem),
             command: 'tasksMention',
             fetchMore: this.getMoreFeedFetcher(),
           },
@@ -175,7 +175,7 @@ export default class MentionUI extends Plugin {
           'task',
           {
             label: t('Tasks'),
-            renderer: taskRenderer,
+            renderer: (item) => taskRenderer(item, this.renderTaskItem),
             command: 'tasksMention',
             fetchMore: this.getMoreFeedFetcher(),
           },

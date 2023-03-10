@@ -13,7 +13,9 @@ specifiers:
   '@ckeditor/ckeditor5-clipboard': ^36.0.1
   '@ckeditor/ckeditor5-core': ^36.0.1
   '@ckeditor/ckeditor5-dev-utils': ^34.1.1
+  '@ckeditor/ckeditor5-editor-balloon': ^36.0.1
   '@ckeditor/ckeditor5-editor-classic': ^36.0.1
+  '@ckeditor/ckeditor5-editor-inline': ^36.0.1
   '@ckeditor/ckeditor5-engine': ^36.0.1
   '@ckeditor/ckeditor5-essentials': ^36.0.1
   '@ckeditor/ckeditor5-heading': ^36.0.1
@@ -48,6 +50,7 @@ specifiers:
   webpack: '5'
   webpack-cli: '4'
   webpack-dev-server: ^4.11.1
+  webpack-merge: ^5.8.0
 
 dependencies:
   '@babel/core': registry.npmmirror.com/@babel/core/7.21.0
@@ -61,7 +64,9 @@ dependencies:
   '@ckeditor/ckeditor5-clipboard': registry.npmmirror.com/@ckeditor/ckeditor5-clipboard/36.0.1
   '@ckeditor/ckeditor5-core': registry.npmmirror.com/@ckeditor/ckeditor5-core/36.0.1
   '@ckeditor/ckeditor5-dev-utils': registry.npmmirror.com/@ckeditor/ckeditor5-dev-utils/34.1.3_webpack@5.75.0
+  '@ckeditor/ckeditor5-editor-balloon': registry.npmmirror.com/@ckeditor/ckeditor5-editor-balloon/36.0.1
   '@ckeditor/ckeditor5-editor-classic': registry.npmmirror.com/@ckeditor/ckeditor5-editor-classic/36.0.1
+  '@ckeditor/ckeditor5-editor-inline': registry.npmmirror.com/@ckeditor/ckeditor5-editor-inline/36.0.1
   '@ckeditor/ckeditor5-engine': registry.npmmirror.com/@ckeditor/ckeditor5-engine/36.0.1
   '@ckeditor/ckeditor5-essentials': registry.npmmirror.com/@ckeditor/ckeditor5-essentials/36.0.1
   '@ckeditor/ckeditor5-heading': registry.npmmirror.com/@ckeditor/ckeditor5-heading/36.0.1
@@ -99,6 +104,7 @@ devDependencies:
   graphql: registry.npmmirror.com/graphql/16.6.0
   react: registry.npmmirror.com/react/18.2.0
   react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
+  webpack-merge: registry.npmmirror.com/webpack-merge/5.8.0
 
 packages:
 
@@ -1790,9 +1796,29 @@ packages:
       - webpack
     dev: false
 
+  registry.npmmirror.com/@ckeditor/ckeditor5-editor-balloon/36.0.1:
+    resolution: {integrity: sha512-S8fIoqQ/A7lGyvEMUY1paZHVNevBWHJ4AvwRfYSgsG/XNjxLJClD7LRk/vT0btyTUg6KAQ9r7oAiSkaU/MfgFg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-editor-balloon/-/ckeditor5-editor-balloon-36.0.1.tgz}
+    name: '@ckeditor/ckeditor5-editor-balloon'
+    version: 36.0.1
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5/36.0.1
+      lodash-es: registry.npmmirror.com/lodash-es/4.17.21
+    dev: false
+
   registry.npmmirror.com/@ckeditor/ckeditor5-editor-classic/36.0.1:
     resolution: {integrity: sha512-/euO79HzgIxILgxbqpGaMxO3f2BSGazljAGTc+aGJQ4bs9YnkxpeCc2wxYXuUzMNev2vVqhaPTvRJzg2Bb2r9w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-editor-classic/-/ckeditor5-editor-classic-36.0.1.tgz}
     name: '@ckeditor/ckeditor5-editor-classic'
+    version: 36.0.1
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: registry.npmmirror.com/ckeditor5/36.0.1
+      lodash-es: registry.npmmirror.com/lodash-es/4.17.21
+    dev: false
+
+  registry.npmmirror.com/@ckeditor/ckeditor5-editor-inline/36.0.1:
+    resolution: {integrity: sha512-N20Ph2GOQGIPS1mIR0hFz4MpYEjr2H5nR0MZ5Tw/uO15PljsHkiZkQ8fcO6zuTU5ep96lWEMFvZtaqWDj+0nQQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ckeditor/ckeditor5-editor-inline/-/ckeditor5-editor-inline-36.0.1.tgz}
+    name: '@ckeditor/ckeditor5-editor-inline'
     version: 36.0.1
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
@@ -3117,7 +3143,6 @@ packages:
       is-plain-object: registry.npmmirror.com/is-plain-object/2.0.4
       kind-of: registry.npmmirror.com/kind-of/6.0.3
       shallow-clone: registry.npmmirror.com/shallow-clone/3.0.1
-    dev: false
 
   registry.npmmirror.com/color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/color-convert/-/color-convert-1.9.3.tgz}
@@ -4492,7 +4517,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       isobject: registry.npmmirror.com/isobject/3.0.1
-    dev: false
 
   registry.npmmirror.com/is-stream/2.0.1:
     resolution: {integrity: sha512-hFoiJiTl63nn+kstHGBtewWSKnQLpyb155KHheA1l39uvtO9nWIop1p3udqPcUd/xbF1VLMO4n7OI6p7RbngDg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/is-stream/-/is-stream-2.0.1.tgz}
@@ -4527,7 +4551,6 @@ packages:
     name: isobject
     version: 3.0.1
     engines: {node: '>=0.10.0'}
-    dev: false
 
   registry.npmmirror.com/javascript-stringify/1.6.0:
     resolution: {integrity: sha512-fnjC0up+0SjEJtgmmG+teeel68kutkvzfctO/KxE3qJlbunkJYAshgH3boU++gSBHP8z5/r0ts0qRIrHf0RTQQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/javascript-stringify/-/javascript-stringify-1.6.0.tgz}
@@ -4616,7 +4639,6 @@ packages:
     name: kind-of
     version: 6.0.3
     engines: {node: '>=0.10.0'}
-    dev: false
 
   registry.npmmirror.com/klona/2.0.6:
     resolution: {integrity: sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/klona/-/klona-2.0.6.tgz}
@@ -6377,7 +6399,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       kind-of: registry.npmmirror.com/kind-of/6.0.3
-    dev: false
 
   registry.npmmirror.com/shebang-command/2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/shebang-command/-/shebang-command-2.0.0.tgz}
@@ -7071,7 +7092,6 @@ packages:
     dependencies:
       clone-deep: registry.npmmirror.com/clone-deep/4.0.1
       wildcard: registry.npmmirror.com/wildcard/2.0.0
-    dev: false
 
   registry.npmmirror.com/webpack-sources/1.4.3:
     resolution: {integrity: sha512-lgTS3Xhv1lCOKo7SA5TjKXMjpSM4sBjNV5+q2bqesbSPs5FjGmU6jjtBSkX9b4qW87vDIsCIlUPOEhbZrMdjeQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/webpack-sources/-/webpack-sources-1.4.3.tgz}
@@ -7175,7 +7195,6 @@ packages:
     resolution: {integrity: sha512-JcKqAHLPxcdb9KM49dufGXn2x3ssnfjbcaQdLlfZsL9rH9wgDQjUtDxbo8NE0F6SFvydeu1VhZe7hZuHsB2/pw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/wildcard/-/wildcard-2.0.0.tgz}
     name: wildcard
     version: 2.0.0
-    dev: false
 
   registry.npmmirror.com/wrappy/1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/wrappy/-/wrappy-1.0.2.tgz}

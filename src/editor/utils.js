@@ -11,3 +11,5 @@ export function debounce(func, wait = 200, immediate) {
     if (callNow) func.apply(this, args);
   };
 }
+
+export function noop() { }

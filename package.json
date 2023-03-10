@@ -1,15 +1,23 @@
 {
-  "name": "ckeditor-build-dumbo",
+  "name": "ckeditor-build-task",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "ONES Task 编辑器",
+  "main": "./build/ckeditor.js",
+  "files": [
+    "build"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack serve"
+    "dev": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "SnowChasm",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=5.7.1"
+  },
+  "license": "GPL-2.0-or-later",
   "dependencies": {
     "@babel/core": "^7.21.0",
     "@babel/plugin-transform-runtime": "^7.21.0",
@@ -22,7 +30,9 @@
     "@ckeditor/ckeditor5-clipboard": "^36.0.1",
     "@ckeditor/ckeditor5-core": "^36.0.1",
     "@ckeditor/ckeditor5-dev-utils": "^34.1.1",
+    "@ckeditor/ckeditor5-editor-balloon": "^36.0.1",
     "@ckeditor/ckeditor5-editor-classic": "^36.0.1",
+    "@ckeditor/ckeditor5-editor-inline": "^36.0.1",
     "@ckeditor/ckeditor5-engine": "^36.0.1",
     "@ckeditor/ckeditor5-essentials": "^36.0.1",
     "@ckeditor/ckeditor5-heading": "^36.0.1",
@@ -65,6 +75,7 @@
     "@ckeditor/ckeditor5-inspector": "^4.1.0",
     "graphql": "^16.6.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "webpack-merge": "^5.8.0"
   }
 }

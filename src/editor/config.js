@@ -33,9 +33,6 @@ import UploadAdapter from './plugins/upload-adapter/uploadAdapter';
 import WidgetFixer from './plugins/widget-fixer/widgetFixer';
 import Mention from './plugins/mention/mention';
 
-// TODO: 剪贴板 api 有更改
-// 详见：https://ckeditor.com/docs/ckeditor5/latest/updating/guides/update-to-27.html#clipboard-input-pipeline-integration
-
 const commonPlugins = [
   Autoformat,
   Autolink,
@@ -193,4 +190,19 @@ const defaultConfig = {
   language: 'zh-CN',
 }
 
-export default defaultConfig;
+const mentionOnly = {
+  plugins: [
+    Essentials,
+    Mention,
+    Paragraph,
+    WidgetFixer
+  ],
+  toolbar: [],
+  disableImageView: true,
+  language: 'zh-CN',
+}
+
+export default {
+  defaultConfig,
+  mentionOnly,
+};
