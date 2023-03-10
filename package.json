@@ -1,6 +1,6 @@
 {
   "name": "ckeditor5-build-task",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ONES Task 编辑器",
   "main": "./build/ckeditor.js",
   "files": [
