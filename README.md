@@ -6,7 +6,7 @@ ckeditor 编辑器 - 自定义构建
 
 # Hot to use
 ```javascript
-import CKEditor from 'ckeditor-build-task';
+import CKEditor from 'ckeditor5-build-task';
 
 function Editor(props) {
   return (
