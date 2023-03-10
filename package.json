@@ -1,5 +1,5 @@
 {
-  "name": "ckeditor-build-task",
+  "name": "@mycolorway/ckeditor-build-task",
   "version": "1.0.0",
   "description": "ONES Task 编辑器",
   "main": "./build/ckeditor.js",
