@@ -237,13 +237,11 @@ export default class MentionUI extends Plugin {
   }
 
   getMoreFeedFetcher() {
-    let offset = 0;
     let loading = false;
 
-    return async ({ query, category }) => {
+    return async ({ query, category, offset }) => {
       if (loading) { return false; }
       loading = true;
-      offset += 5;
       const {
         data: { searchCategory },
       } = await this.apolloClient.query({

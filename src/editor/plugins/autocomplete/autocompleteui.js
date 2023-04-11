@@ -346,9 +346,12 @@ export default class AutocompleteUI extends Plugin {
       });
 
       this.listenTo(buttonView, 'execute', () => {
-        const fetchMore = this.getFetchMore(marker, section);
+
         this.executeFetchMore({
-          fetchMore, feedText, marker, section,
+          feedText,
+          marker,
+          section,
+          ...this.getFetchMore(marker, section),
         });
       });
 
@@ -384,17 +387,24 @@ export default class AutocompleteUI extends Plugin {
 
   getFetchMore(marker, section) {
     const { sections } = this.config.get(marker);
-    return sections.get(section).fetchMore;
+    const data = sections.get(section);
+    const offset = this.feeds[section]?.offset;
+
+    return {
+      fetchMore: data.fetchMore,
+      offset: offset || 0,
+    };
   }
 
   async executeFetchMore({
-    fetchMore, marker, feedText, section,
+    fetchMore, marker, feedText, section, offset,
   }) {
     const {
-      category, resources, hasMore,
+      category, resources, hasMore, offset: nextOffset,
     } = await fetchMore({
       query: feedText,
       category: section,
+      offset,
     });
 
     const { sections } = this.config.get(marker);
@@ -403,6 +413,7 @@ export default class AutocompleteUI extends Plugin {
       ...feed,
       resources: [...feed.resources, ...resources],
       hasMore,
+      offset: nextOffset,
     };
     this.renderFeeds({ feedText, marker, sections });
   }
