@@ -10,6 +10,7 @@ import CKEditorInspector from '@ckeditor/ckeditor5-inspector';
 import './theme/editor.scss';
 import './translations/zh-CN';
 import './translations/en-US';
+import './translations/ja-JP';
 
 import configs from './config';
 import { noop } from './utils';
