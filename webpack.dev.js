@@ -8,7 +8,7 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    port: 3000,
+    port: 4005,
     hot: true
   },
   entry: './src/index.js',

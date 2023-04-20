@@ -1,6 +1,6 @@
 {
   "name": "ckeditor5-build-task",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "ONES Task 编辑器",
   "main": "./build/ckeditor.js",
   "files": [
@@ -44,7 +44,7 @@
     "@ckeditor/ckeditor5-mention": "^36.0.1",
     "@ckeditor/ckeditor5-paragraph": "^36.0.1",
     "@ckeditor/ckeditor5-paste-from-office": "^36.0.1",
-    "@ckeditor/ckeditor5-react": "^5.1.0",
+    "@ckeditor/ckeditor5-react": "^6.0.0",
     "@ckeditor/ckeditor5-theme-lark": "^36.0.1",
     "@ckeditor/ckeditor5-typing": "^36.0.1",
     "@ckeditor/ckeditor5-ui": "^36.0.1",

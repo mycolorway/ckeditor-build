@@ -26,7 +26,6 @@ import Autolink from './plugins/autolink/autolink';
 import ClipboardFixer from './plugins/clipboard-fixer/clipboardFixer';
 import ImageViewer from './plugins/image-viewer/imageViewer';
 import InlineHighlight from './plugins/inline-highlight/inlineHighlight';
-import InlinePlaceholder from './plugins/inline-placeholder/inlinePlaceholder';
 import LinkConverter from './plugins/link-converter/linkConverter';
 import LinkOpener from './plugins/link-opener/linkOpener';
 import UploadAdapter from './plugins/upload-adapter/uploadAdapter';
@@ -49,7 +48,6 @@ const commonPlugins = [
   ImageUpload,
   ImageViewer,
   InlineHighlight,
-  InlinePlaceholder,
   Italic,
   Link,
   LinkConverter,
