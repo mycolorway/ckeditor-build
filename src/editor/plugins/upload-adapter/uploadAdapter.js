@@ -81,7 +81,7 @@ class Adapter {
 
     xhr.addEventListener('error', () => reject(genericErrorText));
     xhr.addEventListener('abort', () => reject());
-    xhr.addEventListener('load', () => {
+    xhr.addEventListener('load', async () => {
       const { response } = xhr;
 
       if (response?.error || (file.service === 'qiniu' && !response)) {
@@ -96,9 +96,31 @@ class Adapter {
         pendingActions.remove(this.uploadingAction);
       }
       const imageUrl = `${this.imageStorageUrl}/${file.signedBlobId}/file`;
-      return resolve({
-        default: imageUrl,
-      });
+      const headers = JSON.parse(file.headers);
+      if (headers.need_callback) {
+        const fullUrl = window.onesPublicPathConfig
+          ? `${window.onesPublicPathConfig?.domain}api/project`
+          : (window.location.origin + window.location.pathname);
+        const excInfo = headers.exc_info;
+        const url = `${fullUrl + headers.callback_url}?web_callback_info=${encodeURIComponent(excInfo)}`;
+        try {
+          await fetch(url, {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            method: 'POST',
+          });
+          return resolve({
+            default: imageUrl,
+          });
+        } catch (error) {
+          console.log(error, 'callback_url 报错');
+        }
+      } else {
+        return resolve({
+          default: imageUrl,
+        });
+      }
     });
 
     if (xhr.upload) {
