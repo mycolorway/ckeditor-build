@@ -26,6 +26,16 @@ const CREATE_DIRECT_UPLOAD = gql`
   }
 `;
 
+function getUploadCallbackUrl() {
+  let domain = window.location.origin;
+
+  if (window.onesPublicPathConfig) {
+    domain = window.onesPublicPathConfig.domain;
+  }
+
+  return `${domain}/api/project`;
+}
+
 class Adapter {
   constructor(loader, apolloClient, editor, imageStorageUrl) {
     this.loader = loader;
@@ -98,9 +108,7 @@ class Adapter {
       const imageUrl = `${this.imageStorageUrl}/${file.signedBlobId}/file`;
       const headers = JSON.parse(file.headers);
       if (headers.need_callback) {
-        const fullUrl = window.onesPublicPathConfig
-          ? `${window.onesPublicPathConfig?.domain}api/project`
-          : (window.location.origin + window.location.pathname);
+        const fullUrl = getUploadCallbackUrl();
         const excInfo = headers.exc_info;
         const url = `${fullUrl + headers.callback_url}?web_callback_info=${encodeURIComponent(excInfo)}`;
         try {
