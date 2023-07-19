@@ -7,7 +7,6 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 //dev
 import CKEditorInspector from '@ckeditor/ckeditor5-inspector';
 
-import './theme/editor.scss';
 import './translations/zh-CN';
 import './translations/en-US';
 import './translations/ja-JP';
