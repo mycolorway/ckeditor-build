@@ -31,6 +31,7 @@ import LinkOpener from './plugins/link-opener/linkOpener';
 import UploadAdapter from './plugins/upload-adapter/uploadAdapter';
 import WidgetFixer from './plugins/widget-fixer/widgetFixer';
 import Mention from './plugins/mention/mention';
+import LinkAutoUpdate from './plugins/link-auto-update/LinkAutoUpdate';
 
 const commonPlugins = [
   Autoformat,
@@ -52,6 +53,7 @@ const commonPlugins = [
   Link,
   LinkConverter,
   LinkOpener,
+  LinkAutoUpdate,
   List,
   Mention,
   Paragraph,
