@@ -19,7 +19,8 @@ export default class LinksMentionCommand extends AutocompleteCommand {
 
   getHref(item) {
     if (this.type === 'task') {
-      return `${process.env.NEXT_PUBLIC_ONES_PREFIX}/tasks/${item.uuid}`;
+      const onesAppUrl = this.editor.config.get('onesAppLinkUrl');
+      return `${onesAppUrl}/tasks/${item.uuid}`;
     }
 
     return '';

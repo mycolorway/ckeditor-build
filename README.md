@@ -26,6 +26,7 @@ function Editor(props) {
 | openTask | Click the task name to open the task detail page | function | * |
 | apolloClient | the apollo client for mention and image upload plugins | object | * |
 | imageStorageUrl | the image prefix url | string | * |
+| onesAppLinkUrl | this ones app url | string | * |
 | customFunctions | render the custom functions to editor<br>renderTaskItem, renderMemberItem, renderLoading, openTask, uploadFile | object | * |
 | handleAfterCommandExec | Callback events for the editor functionality | function |   |
 | openImageViewer | Click on the image for a larger view | function | * |
