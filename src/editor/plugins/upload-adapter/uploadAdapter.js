@@ -27,7 +27,10 @@ class Adapter {
             }
             const imageUrl = `${this.imageStorageUrl}/${res.signedBlobId}/file`;
             resolve({
-              default: imageUrl
+              urls: {
+                default: imageUrl
+              },
+              resourceUuid: res.resourceUuid,
             })
           },
           reject: (err) => {

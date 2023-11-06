@@ -33,6 +33,9 @@ import WidgetFixer from './plugins/widget-fixer/widgetFixer';
 import Mention from './plugins/mention/mention';
 import LinkAutoUpdate from './plugins/link-auto-update/LinkAutoUpdate';
 
+// ones
+import OnesImage from './plugins/ones-image/OnesImage';
+
 const commonPlugins = [
   Autoformat,
   Autolink,
@@ -64,6 +67,7 @@ const commonPlugins = [
   Underline,
   WidgetFixer,
   PendingActions,
+  OnesImage,
 ]
 
 // 高亮配置

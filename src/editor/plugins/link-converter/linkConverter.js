@@ -94,9 +94,14 @@ export default class LinkConverter extends Plugin {
       writer.removeMarker(marker);
       if (title) {
         const link = writer.createText(title);
+        
+        // 去掉域名信息, 使用相对路径
+        const locationOrigin = window.location.origin;
+        const linkUrl = data.linkHref.replace(locationOrigin, '');
+
         writer.setAttributes(
           {
-            linkHref: data.linkHref,
+            linkHref: linkUrl,
             linkConverted: true,
           },
           link,
