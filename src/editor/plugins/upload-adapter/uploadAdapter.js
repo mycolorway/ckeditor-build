@@ -25,12 +25,11 @@ class Adapter {
               const pendingActions = this.editor.plugins.get('PendingActions');
               pendingActions.remove(this.uploadingAction);
             }
-            const imageUrl = `${this.imageStorageUrl}/${res.signedBlobId}/file`;
             resolve({
               urls: {
-                default: imageUrl
+                default: res.imageUrl
               },
-              resourceUuid: res.resourceUuid,
+              signedBlobId: res.signedBlobId,
             })
           },
           reject: (err) => {

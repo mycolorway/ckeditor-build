@@ -3,7 +3,8 @@ import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 class CustomImagePlugin extends Plugin {
 
     init() {
-      this.resourceKey = 'resourceUuid';
+      this.resourceKey = 'signedBlobId';
+      this.domDataKey = 'data-task-signed-blob-id'
       // 扩展属性
       this.extendSchema();
 
@@ -18,12 +19,12 @@ class CustomImagePlugin extends Plugin {
       const { editor } = this;
       
       editor.conversion.for( 'upcast' ).attributeToAttribute( {
-        view: 'data-ones-resource-uuid',
-        model: 'resourceUuid'
+        view: this.domDataKey,
+        model: this.resourceKey,
       } );
 
       editor.conversion.for( 'downcast' ).add( dispatcher => {
-        dispatcher.on( 'attribute:resourceUuid:imageBlock', ( evt, data, conversionApi ) => {
+        dispatcher.on( `attribute:${this.resourceKey}:imageBlock`, ( evt, data, conversionApi ) => {
           if ( !conversionApi.consumable.consume( data.item, evt.name ) ) {
             return;
           }
@@ -33,9 +34,9 @@ class CustomImagePlugin extends Plugin {
           const img = figure.getChild( 0 );
 
           if ( data.attributeNewValue !== null ) {
-            viewWriter.setAttribute( 'data-ones-resource-uuid', data.attributeNewValue, img );
+            viewWriter.setAttribute( this.domDataKey, data.attributeNewValue, img );
           } else {
-            viewWriter.removeAttribute( 'data-ones-resource-uuid', img );
+            viewWriter.removeAttribute( this.domDataKey, img );
           }
         } );
       });
@@ -51,7 +52,7 @@ class CustomImagePlugin extends Plugin {
       const imageUploadEditing = editor.plugins.get( 'ImageUploadEditing' );
 
       imageUploadEditing.on( 'uploadComplete', ( evt, { data, imageElement } ) => {
-        if (data.resourceUuid) {
+        if (data[this.resourceKey]) {
           editor.model.change( writer => {
             writer.setAttribute( this.resourceKey, data[this.resourceKey], imageElement );
           } );
