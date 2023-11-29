@@ -1,4 +1,5 @@
-const translations = window.CKEDITOR_TRANSLATIONS || (window.CKEDITOR_TRANSLATIONS = {});
+const translations =
+  window.CKEDITOR_TRANSLATIONS || (window.CKEDITOR_TRANSLATIONS = {});
 translations['zh-CN'] = translations['zh-CN'] || {};
 const locale = translations['zh-CN'];
 locale.dictionary = Object.assign(locale.dictionary || {}, {
@@ -80,7 +81,8 @@ locale.dictionary = Object.assign(locale.dictionary || {}, {
   'The URL must not be empty.': '链接不可以为空。',
   'This link has no URL': '此链接没有设置网址',
   'This media URL is not supported.': '不支持此媒体链接。',
-  'Tip: Paste the URL into the content to embed faster.': '提示：将链接粘贴到内容中可更快地嵌入',
+  'Tip: Paste the URL into the content to embed faster.':
+    '提示：将链接粘贴到内容中可更快地嵌入',
   Undo: '撤销',
   Unlink: '取消超链接',
   'Upload failed': '上传失败',
@@ -108,7 +110,7 @@ locale.dictionary = Object.assign(locale.dictionary, {
   'Mention resources': '提及成员、任务',
   'Mention resources task': '提及任务',
   Loading: '正在加载...',
-  'Resource Not Found': '没有找到符合的成员、任务或文件',
+  'Resource Not Found': '没有找到符合的成员或任务',
   'Resource Not Found Task': '没有找到符合的任务',
   Members: '成员',
   Tasks: '任务',

@@ -1,4 +1,5 @@
-const translations = window.CKEDITOR_TRANSLATIONS || (window.CKEDITOR_TRANSLATIONS = {});
+const translations =
+  window.CKEDITOR_TRANSLATIONS || (window.CKEDITOR_TRANSLATIONS = {});
 translations['en-US'] = translations['en-US'] || {};
 const locale = translations['en-US'];
 locale.dictionary = Object.assign(locale.dictionary || {}, {
@@ -12,8 +13,10 @@ locale.dictionary = Object.assign(locale.dictionary || {}, {
   'Change image text alternative': 'Change image text alternative',
   'Choose heading': 'Aa',
   Column: 'Column',
-  'Could not insert image at the current position.': 'Failed to insert image in current position',
-  'Could not obtain resized image URL.': 'Failed to get link for the resized image',
+  'Could not insert image at the current position.':
+    'Failed to insert image in current position',
+  'Could not obtain resized image URL.':
+    'Failed to get link for the resized image',
   'Decrease indent': 'Decrease indent',
   'Delete column': 'Delete column',
   'Delete row': 'Delete row',
@@ -80,7 +83,8 @@ locale.dictionary = Object.assign(locale.dictionary || {}, {
   'The URL must not be empty.': 'Link cannot be empty.',
   'This link has no URL': 'No URL set for this link',
   'This media URL is not supported.': 'This media URL is not supported.',
-  'Tip: Paste the URL into the content to embed faster.': 'Tip: Paste link into content for faster embedding',
+  'Tip: Paste the URL into the content to embed faster.':
+    'Tip: Paste link into content for faster embedding',
   Undo: 'Undo',
   Unlink: 'Remove link',
   'Upload failed': 'Upload failed',
@@ -97,7 +101,7 @@ locale.dictionary = Object.assign(locale.dictionary || {}, {
   Justify: 'Justify',
   'To-do List': 'To-do list',
   Mention: 'Mention',
-  Image: 'Image'
+  Image: 'Image',
 });
 
 // translation for dumbo
@@ -108,11 +112,11 @@ locale.dictionary = Object.assign(locale.dictionary, {
   'Mention resources': 'Mention members or tasks',
   'Mention resources task': 'Mention tasks',
   Loading: 'Loading...',
-  'Resource Not Found': 'No matching member, task, or file',
+  'Resource Not Found': 'No matching member or task',
   'Resource Not Found Task': 'No matching task',
   Members: 'Member',
   Tasks: 'Task',
-  Docs: 'Cloud documents'
+  Docs: 'Cloud documents',
 });
 
 locale.getPluralForm = (n) => (n === 1 ? 0 : 1);

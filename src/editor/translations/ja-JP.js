@@ -107,7 +107,7 @@ locale.dictionary = Object.assign(locale.dictionary, {
   'Mention resources': 'メンバー、タスクをメンションする',
   'Mention resources task': 'タスクをメンションする',
   Loading: '読み込み中...',
-  'Resource Not Found': '一致するメンバー、タスク、ファイルが見つかりません',
+  'Resource Not Found': '一致するメンバーまたはタスクが見つかりません',
   'Resource Not Found Task': '一致するタスクが見つかりません',
   Members: 'メンバー',
   Tasks: 'タスク',
