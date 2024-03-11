@@ -1,4 +1,5 @@
-const translations = window.CKEDITOR_TRANSLATIONS || (window.CKEDITOR_TRANSLATIONS = {});
+const translations =
+  window.CKEDITOR_TRANSLATIONS || (window.CKEDITOR_TRANSLATIONS = {});
 translations['ja-JP'] = translations['ja-JP'] || {};
 const locale = translations['ja-JP'];
 locale.dictionary = Object.assign(locale.dictionary || {}, {
@@ -11,9 +12,12 @@ locale.dictionary = Object.assign(locale.dictionary || {}, {
   'Centered image': '画像中央揃え',
   'Change image text alternative': '画像の代替テキストを変更',
   'Choose heading': 'Aa',
+  Code: 'コード',
   Column: '列',
-  'Could not insert image at the current position.': '現在の位置に画像を挿入できません',
-  'Could not obtain resized image URL.': 'サイズ変更の画像URLの取得に失敗しました',
+  'Could not insert image at the current position.':
+    '現在の位置に画像を挿入できません',
+  'Could not obtain resized image URL.':
+    'サイズ変更の画像URLの取得に失敗しました',
   'Decrease indent': 'インデント解除',
   'Delete column': 'この列を削除',
   'Delete row': 'この行を削除',
@@ -47,7 +51,7 @@ locale.dictionary = Object.assign(locale.dictionary || {}, {
   Italic: '斜体',
   'Left aligned image': '画像左揃え',
   Link: 'ハイパーリンク',
-  'Link URL': 'Web URL',
+  'Link URL': 'リンク URL',
   'Media URL': 'メディアURL',
   'media widget': 'メディアウィジェット',
   'Merge cell down': '下のセルと結合',
@@ -80,7 +84,8 @@ locale.dictionary = Object.assign(locale.dictionary || {}, {
   'The URL must not be empty.': 'URLが必須です。',
   'This link has no URL': 'このリンクにURLが設定されていません',
   'This media URL is not supported.': 'このメディアURLには対応していません',
-  'Tip: Paste the URL into the content to embed faster.': 'ヒント：URLをコンテンツに貼り付けて、より速く入力します',
+  'Tip: Paste the URL into the content to embed faster.':
+    'ヒント：URLをコンテンツに貼り付けて、より速く入力します',
   Undo: '元に戻す',
   Unlink: 'ハイパーリンクを解除',
   'Upload failed': 'アップロードに失敗しました',
@@ -97,7 +102,7 @@ locale.dictionary = Object.assign(locale.dictionary || {}, {
   Justify: '両端揃え',
   'To-do List': 'チェック項目',
   Mention: 'メンション',
-  Image: '画像'
+  Image: '画像',
 });
 // translation for dumbo
 locale.dictionary = Object.assign(locale.dictionary, {
@@ -111,6 +116,6 @@ locale.dictionary = Object.assign(locale.dictionary, {
   'Resource Not Found Task': '一致するタスクが見つかりません',
   Members: 'メンバー',
   Tasks: 'タスク',
-  Docs: 'クラウドドキュメント'
+  Docs: 'クラウドドキュメント',
 });
 locale.getPluralForm = () => 0;

@@ -12,6 +12,7 @@ locale.dictionary = Object.assign(locale.dictionary || {}, {
   'Centered image': '图片居中',
   'Change image text alternative': '更改图片替换文本',
   'Choose heading': 'Aa',
+  Code: '代码',
   Column: '列',
   'Could not insert image at the current position.': '无法在当前位置插入图片',
   'Could not obtain resized image URL.': '无法获取重设大小的图片链接',
