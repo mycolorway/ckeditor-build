@@ -12,34 +12,36 @@ class Adapter {
 
   upload() {
     return this.loader.file.then(
-      (file) => new Promise((resolve, reject) => {
-        if (this.editor.plugins.has('PendingActions')) {
-          const pendingActions = this.editor.plugins.get('PendingActions');
-          this.uploadingAction = pendingActions.add('upload image');
-        }
-
-        this.uploadFile({
-          file,
-          resolve: (res) => {
-            if (this.editor.plugins.has('PendingActions')) {
-              const pendingActions = this.editor.plugins.get('PendingActions');
-              pendingActions.remove(this.uploadingAction);
-            }
-            resolve({
-              urls: {
-                default: res.imageUrl
-              },
-              signedBlobId: res.signedBlobId,
-            })
-          },
-          reject: (err) => {
-            reject(err.message);
-          },
-          onProgress: (percent) => {
-            this.loader.uploadedPercent = percent;
+      (file) =>
+        new Promise((resolve, reject) => {
+          if (this.editor.plugins.has('PendingActions')) {
+            const pendingActions = this.editor.plugins.get('PendingActions');
+            this.uploadingAction = pendingActions.add('upload image');
           }
+
+          this.uploadFile({
+            file,
+            resolve: (res) => {
+              if (this.editor.plugins.has('PendingActions')) {
+                const pendingActions =
+                  this.editor.plugins.get('PendingActions');
+                pendingActions.remove(this.uploadingAction);
+              }
+              resolve({
+                urls: {
+                  default: res.imageUrl,
+                },
+                signedBlobId: res.signedBlobId,
+              });
+            },
+            reject: (err) => {
+              reject(err.message);
+            },
+            onProgress: (percent) => {
+              this.loader.uploadedPercent = percent;
+            },
+          });
         })
-      }),
     );
   }
 }
@@ -54,8 +56,28 @@ export default class UploadAdapter extends Plugin {
   }
 
   init() {
+    const disableImageUpload = this.editor.config.get('disableImageUpload');
     const plugin = this.editor.plugins.get('FileRepository');
     const imageStorageUrl = this.editor.config.get('imageStorageUrl');
-    plugin.createUploadAdapter = (loader) => new Adapter(loader, this.editor, imageStorageUrl);
+
+    if (disableImageUpload) {
+      // 禁用图片上传
+      plugin.createUploadAdapter = null;
+      // 阻止放入图片
+      this.editor.plugins
+        .get('Clipboard')
+        .on('inputTransformation', (evt, data) => {
+          for (const element of data.content.getChildren()) {
+            console.log('element', element);
+            if (element.name === 'img') {
+              evt.stop();
+            }
+          }
+        });
+      return;
+    }
+
+    plugin.createUploadAdapter = (loader) =>
+      new Adapter(loader, this.editor, imageStorageUrl);
   }
 }

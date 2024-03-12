@@ -14,9 +14,7 @@ import './translations/ja-JP';
 import configs from './config';
 import { noop } from './utils';
 
-
 function Editor(props) {
-
   const {
     openImageViewer = noop,
     baseConfig = 'defaultConfig',
@@ -33,7 +31,7 @@ function Editor(props) {
     viewportTopOffset,
     handleAfterCommandExec = noop,
     ...otherProps
-  } = props
+  } = props;
 
   const editorBase = useMemo(() => {
     switch (type) {
@@ -45,20 +43,20 @@ function Editor(props) {
       default:
         return ClassicEditor;
     }
-  }, [])
+  }, []);
 
   const mergedConfig = useMemo(() => {
     const result = {
       ...(configs[baseConfig] || {}),
       ...otherProps,
-    }
+    };
     if (viewportTopOffset) {
       Object.assign(result.toolbar, {
-        viewportTopOffset
-      })
+        viewportTopOffset,
+      });
     }
-    return result
-  })
+    return result;
+  });
 
   // 延迟操作状态变更
   const needPending = useRef(false);
@@ -118,7 +116,8 @@ function Editor(props) {
       // https://github.com/ckeditor/ckeditor5/issues/2343#issuecomment-382711345
       // 气泡工具栏的箭头是硬编码，去掉箭头及预留空间需要按照上述官方推荐的做法
 
-      const balloonPanelViewConstructor = editor.plugins.get('ContextualBalloon').view.constructor;
+      const balloonPanelViewConstructor =
+        editor.plugins.get('ContextualBalloon').view.constructor;
 
       balloonPanelViewConstructor.arrowHorizontalOffset = 25;
       balloonPanelViewConstructor.arrowVerticalOffset = 3;
@@ -140,13 +139,23 @@ function Editor(props) {
         btn.on('execute', () => handleAfterCommandExec(item));
       }
     });
+
+    const disableImageUpload = editor.config.get('disableImageUpload');
+    if (disableImageUpload) {
+      const toolbarItems = editor.ui.view.toolbar.items;
+      const imageToolbarButton = toolbarItems.get(16);
+      if (imageToolbarButton) {
+        const buttonView = imageToolbarButton.buttonView;
+        buttonView.isEnabled = false;
+        buttonView.tooltip = editor.config.get('disableImageUploadTooltip');
+      }
+    }
   };
 
   const ignoreBlurRef = useRef(false);
   const handleBlur = (event, editor) => {
     // 有正在进行的异步任务，例如上传图片
-    if (ignoreBlurRef.current
-      || needPending.current) {
+    if (ignoreBlurRef.current || needPending.current) {
       return;
     }
 
@@ -165,7 +174,7 @@ function Editor(props) {
     }
     editor.ui.element.classList.remove('ck-focused');
     if (onBlur) onBlur(event, editor);
-  }
+  };
 
   const handleFocus = (event, editor) => {
     ignoreBlurRef.current = true;
@@ -174,7 +183,7 @@ function Editor(props) {
     }, 100);
     editor.ui.element.classList.add('ck-focused');
     if (onFocus) onFocus(event, editor);
-  }
+  };
 
   return (
     <CKEditor
@@ -187,7 +196,7 @@ function Editor(props) {
       onBlur={handleBlur}
       onFocus={handleFocus}
     />
-  )
+  );
 }
 
 export default Editor;
