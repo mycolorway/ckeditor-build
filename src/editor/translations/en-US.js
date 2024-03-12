@@ -12,6 +12,7 @@ locale.dictionary = Object.assign(locale.dictionary || {}, {
   'Centered image': 'Center align image',
   'Change image text alternative': 'Change image text alternative',
   'Choose heading': 'Aa',
+  Code: 'Code',
   Column: 'Column',
   'Could not insert image at the current position.':
     'Failed to insert image in current position',

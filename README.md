@@ -1,39 +1,42 @@
 # Ckeditor-build
+
 ckeditor 编辑器 - 自定义构建
 
 # Install
+
 `pnpm add ckeditor5-build-task`
 
 # Hot to use
+
 ```javascript
 import CKEditor from 'ckeditor5-build-task';
 
 function Editor(props) {
-  return (
-    <CKEditor
-      {...props}
-    />
-  )
+  return <CKEditor {...props} />;
 }
 ```
 
 # Attributes
-| props | description | types | required |
-| ----- | ----------- | ----- | -------- |
-| type | classic, inline, balloon | string |    |
-| data | the editor content | string |   |
-| disabled | disabled | boolean |     |
-| openTask | Click the task name to open the task detail page | function | * |
-| apolloClient | the apollo client for mention and image upload plugins | object | * |
-| imageStorageUrl | the image prefix url | string | * |
-| onesAppLinkUrl | this ones app url | string | * |
-| customFunctions | render the custom functions to editor<br>renderTaskItem, renderMemberItem, renderLoading, openTask, uploadFile | object | * |
-| handleAfterCommandExec | Callback events for the editor functionality | function |   |
-| openImageViewer | Click on the image for a larger view | function | * |
-| onSyncTaskChange | used in task detail page to control the task description submit | function | * |
-| language | language | string |   |
+
+| props                     | description                                                                                                    | types    | required |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------- | -------- | -------- |
+| type                      | classic, inline, balloon                                                                                       | string   |          |
+| data                      | the editor content                                                                                             | string   |          |
+| disabled                  | disabled                                                                                                       | boolean  |          |
+| openTask                  | Click the task name to open the task detail page                                                               | function | \*       |
+| apolloClient              | the apollo client for mention and image upload plugins                                                         | object   | \*       |
+| imageStorageUrl           | the image prefix url                                                                                           | string   | \*       |
+| disableImageUpload        | disable image upload                                                                                           | boolean  | \*       |
+| disableImageUploadTooltip | image upload toolbar tooltip when disabled                                                                     | string   | \*       |
+| onesAppLinkUrl            | this ones app url                                                                                              | string   | \*       |
+| customFunctions           | render the custom functions to editor<br>renderTaskItem, renderMemberItem, renderLoading, openTask, uploadFile | object   | \*       |
+| handleAfterCommandExec    | Callback events for the editor functionality                                                                   | function |          |
+| openImageViewer           | Click on the image for a larger view                                                                           | function | \*       |
+| onSyncTaskChange          | used in task detail page to control the task description submit                                                | function | \*       |
+| language                  | language                                                                                                       | string   |          |
 
 # renderReactComponents example
+
 ```
 const renderReactComponents = useMemo(() => {
   renderTaskItem: (item, domElement) => {
@@ -67,7 +70,3 @@ const renderReactComponents = useMemo(() => {
     openTask,
 })
 ```
-
-
-
-
